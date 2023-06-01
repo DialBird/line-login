@@ -6,6 +6,12 @@ const handler = NextAuth({
     LineProvider({
       clientId: process.env.LINE_CLIENT_ID!,
       clientSecret: process.env.LINE_CLIENT_SECRET!,
+      authorization: {
+        params: {
+          bot_prompt: "aggressive",
+          prompt: "consent",
+        },
+      },
     }),
   ],
   callbacks: {
